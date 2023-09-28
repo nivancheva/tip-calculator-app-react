@@ -44,11 +44,11 @@ function App() {
           <div className='calculator_result'>
             <div className='calculator_result-amount'>
               <p>Tip Amount<span>/ person</span></p>
-              <p id="amount" class="amount-input">$0.00</p>
+              <p id="amount" className="amount-input">$0.00</p>
             </div>
             <div className='calculator_result-total'>
               <p>Total<span>/ person</span></p>
-              <p id="total" class="total-input">$0.00</p>
+              <p id="total" className="total-input">$0.00</p>
             </div>
             <button>Reset</button>
           </div>
