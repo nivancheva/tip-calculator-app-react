@@ -38,6 +38,14 @@ function App() {
     }
   }
 
+  function getCustomPercentValue() {
+    if (tipPercent === 0) {
+      return "";
+    }
+
+    return tipPercent;
+  }
+
   function handleReset() {
     setBill(0);
     setTipPercent(0);
@@ -53,6 +61,7 @@ function App() {
             <Input 
               label="Bill"
               id="bill"
+              value={bill}
               setValue={setBill}
               icon={iconDollar} />
             <div>
@@ -71,6 +80,7 @@ function App() {
                   id='custom'
                   name='custom'
                   placeholder='Custom'
+                  value={getCustomPercentValue()}
                   onChange={handleCustomPercent}
                   min={0}
                 />             
@@ -79,6 +89,7 @@ function App() {
             <Input
               label="Number of People"
               id="people"
+              value={people}
               setValue={setPeople}
               icon={iconPerson} />
           </div>
