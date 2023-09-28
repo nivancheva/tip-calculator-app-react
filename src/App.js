@@ -1,7 +1,26 @@
 
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [bill, setBill] = useState(0);
+  const [tipPercent, setTipPercent] = useState(0);
+  const [people, setPeople] = useState(0);
+ 
+  function handleButtonClick(tp) {
+    setTipPercent(tp);
+
+    // add selected class
+  }
+
+  function getResultTip() {
+    return (bill*tipPercent/100) / people;
+  }
+
+  function getResultTotal() {
+    return (bill + bill*tipPercent/100) / people;
+  }
+
   return (
     <div className='wraper'>
       <div className='container'>
@@ -17,6 +36,8 @@ function App() {
                     id='bill'
                     name='bill'
                     placeholder='0'
+                    value={bill}
+                    onChange={(e) => {setBill(parseFloat(e.target.value))}}
                   />
                 </div>
             </div>
@@ -24,11 +45,13 @@ function App() {
             <div>
               <p>Select Tip %</p>
               <div className='calculator_input-tip'>
-                <button className='button'>5%</button>
-                <button className='button'>10%</button>
-                <button className='button'>15%</button>
-                <button className='button'>25%</button>
-                <button className='button'>50%</button>
+                {
+                  [5, 10, 15, 25, 50].map((tp, idx) => {
+                    return (
+                      <button key={idx} onClick={() => {handleButtonClick(tp)}} className='button'>{tp}%</button>
+                    );
+                  })
+                }
                   <input
                     type="number"
                     id='custom'
@@ -47,6 +70,8 @@ function App() {
                     id='people'
                     name='people'
                     placeholder='0'
+                    value={people}
+                    onChange={(e) => {setPeople(parseFloat(e.target.value))}}
                   />
                 </div>
             </div>
@@ -54,11 +79,11 @@ function App() {
           <div className='calculator_result'>
             <div className='calculator_result-sum amount'>
               <p className='sum-label'>Tip Amount<span className='light-text'>/ person</span></p>
-              <p id="amount" className="total-sum">$0.00</p>
+              <p id="amount" className="total-sum">${getResultTip()}</p>
             </div>
             <div className='calculator_result-sum total'>
               <p className='sum-label'>Total<span className='light-text'>/ person</span></p>
-              <p id="total" className="total-sum">$0.00</p>
+              <p id="total" className="total-sum">${getResultTotal()}</p>
             </div>
             <button className='button btn-reset'>Reset</button>
           </div>
