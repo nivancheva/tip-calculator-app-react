@@ -17,21 +17,25 @@ function App() {
                   placeholder='0'
                 />
             </div>
-            <div className='calculator_input-tip'>
-              <button>5%</button>
-              <button>10%</button>
-              <button>15%</button>
-              <button>25%</button>
-              <button>50%</button>
-                <input
-                  type="number"
-                  id='custom'
-                  name='custom'
-                  placeholder='Custom'
-                />             
+            
+            <div>
+              <p>Select Tip %</p>
+              <div className='calculator_input-tip'>
+                <button className='button'>5%</button>
+                <button className='button'>10%</button>
+                <button className='button'>15%</button>
+                <button className='button'>25%</button>
+                <button className='button'>50%</button>
+                  <input
+                    type="number"
+                    id='custom'
+                    name='custom'
+                    placeholder='Custom'
+                  />             
+              </div>
             </div>
             <div className='calculator_input-people'>
-              <label htmlFor='people'>Number of people
+              <label htmlFor='people'>Number of People
               </label>
                 <input 
                   type='number'
@@ -42,15 +46,15 @@ function App() {
             </div>
           </div>
           <div className='calculator_result'>
-            <div className='calculator_result-amount'>
-              <p>Tip Amount<span>/ person</span></p>
-              <p id="amount" className="amount-input">$0.00</p>
+            <div className='calculator_result-sum amount'>
+              <p className='sum-label'>Tip Amount<span className='light-text'>/ person</span></p>
+              <p id="amount" className="total-sum">$0.00</p>
             </div>
-            <div className='calculator_result-total'>
-              <p>Total<span>/ person</span></p>
-              <p id="total" className="total-input">$0.00</p>
+            <div className='calculator_result-sum total'>
+              <p className='sum-label'>Total<span className='light-text'>/ person</span></p>
+              <p id="total" className="total-sum">$0.00</p>
             </div>
-            <button>Reset</button>
+            <button className='button btn-reset'>Reset</button>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 :root {
     --clr-cyan: hsl(172, 67%, 45%);
+    --clr-btn-hover: hsl(172, 67%, 70%);
     --clr-dark-cyan: hsl(183, 100%, 15%);
     --clr-dark-gr-cyan: hsl(186, 14%, 43%);
     --clr-grayish-cyan: hsl(184, 14%, 56%);
@@ -27,7 +28,7 @@ img, picture, video, canvas, svg {
 body {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1rem;
 
     background-color: var(--clr-light-gr-cyan);
     color: var(--clr-dark-gr-cyan);
