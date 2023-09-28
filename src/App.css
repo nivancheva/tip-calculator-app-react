@@ -22,7 +22,8 @@ span {
     background-color: var(--clr-white);
     padding: 2em;
     border-radius: 1.25em;
-    max-width: 1100px;
+    max-width: 500px;
+    margin-inline: auto;
 
     display: grid;
     gap: 2em;
@@ -40,6 +41,17 @@ input {
     padding: .375em;
     width: 100%;
     font-size: 1.5rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    padding: .825em;
 }
 
 .calculator_input {
@@ -113,6 +125,7 @@ input {
 
     .calculator {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 1100px;
     }
 
     h1 {

@@ -10,12 +10,15 @@ function App() {
           <div className='calculator_input'>
             <div className='calculator_input-bill'>
               <label htmlFor='bill'>Bill</label>
-                <input 
-                  type='number'
-                  id='bill'
-                  name='bill'
-                  placeholder='0'
-                />
+                <div className='input-wrapper'>
+                  <img className='icon' src='./images/icon-dollar.svg'/>
+                  <input 
+                    type='number'
+                    id='bill'
+                    name='bill'
+                    placeholder='0'
+                  />
+                </div>
             </div>
             
             <div>
@@ -37,12 +40,15 @@ function App() {
             <div className='calculator_input-people'>
               <label htmlFor='people'>Number of People
               </label>
-                <input 
-                  type='number'
-                  id='people'
-                  name='people'
-                  placeholder='0'
-                />
+                <div className='input-wrapper'>
+                  <img className='icon' src='./images/icon-person.svg'/>
+                  <input 
+                    type='number'
+                    id='people'
+                    name='people'
+                    placeholder='0'
+                  />
+                </div>
             </div>
           </div>
           <div className='calculator_result'>
