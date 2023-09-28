@@ -39,6 +39,7 @@ input {
     background-color: var(--clr-very-light-cyan);
     border-radius: .375em;
     padding: .375em;
+    padding-right: .75em;
     width: 100%;
     font-size: 1.5rem;
 }

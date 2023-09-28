@@ -2,29 +2,28 @@
 import { useState } from 'react';
 import './App.css';
 
+const USDollar = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
+
 function App() {
   const [bill, setBill] = useState(0);
   const [tipPercent, setTipPercent] = useState(0);
   const [people, setPeople] = useState(0);
- 
-  function handleButtonClick(tp) {
-    setTipPercent(tp);
-
-    // add selected class
-  }
 
   function getResultTip() {
     if (people === 0) {
       return 0;
     }
-    return (bill*tipPercent/100) / people;
+    return USDollar.format((bill*tipPercent/100) / people);
   }
 
   function getResultTotal() {
     if (people === 0) {
       return 0;
     }
-    return (bill + bill*tipPercent/100) / people;
+    return USDollar.format((bill + bill*tipPercent/100) / people);
   }
 
   function handleReset() {
@@ -61,7 +60,7 @@ function App() {
                   [5, 10, 15, 25, 50].map((tp, idx) => {
                     const selectedClass = (tp === tipPercent) ? "selected" : '';
                     return (
-                      <button key={idx} onClick={() => {handleButtonClick(tp)}} className={`button ${selectedClass}`}>{tp}%</button>
+                      <button key={idx} onClick={() => {setTipPercent(tp)}} className={`button ${selectedClass}`}>{tp}%</button>
                     );
                   })
                 }
@@ -94,11 +93,11 @@ function App() {
           <div className='calculator_result'>
             <div className='calculator_result-sum amount'>
               <p className='sum-label'>Tip Amount<span className='light-text'>/ person</span></p>
-              <p id="amount" className="total-sum">${getResultTip()}</p>
+              <p id="amount" className="total-sum">{getResultTip()}</p>
             </div>
             <div className='calculator_result-sum total'>
               <p className='sum-label'>Total<span className='light-text'>/ person</span></p>
-              <p id="total" className="total-sum">${getResultTotal()}</p>
+              <p id="total" className="total-sum">{getResultTotal()}</p>
             </div>
             <button onClick={handleReset} className='button btn-reset'>Reset</button>
           </div>

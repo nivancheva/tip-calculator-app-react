@@ -25,6 +25,23 @@ img, picture, video, canvas, svg {
     max-width: 100%;
 }
 
+button,
+input {
+    font-family: inherit;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 body {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
