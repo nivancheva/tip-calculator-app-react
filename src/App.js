@@ -8,41 +8,38 @@ function App() {
         <h1>Spli<span>tter</span></h1>
         <div className='calculator'>
           <div className='calculator_input'>
-            <form className='calculator_input-bill' htmlFor='bill'>
-              <label >Bill
+            <div className='calculator_input-bill'>
+              <label htmlFor='bill'>Bill</label>
                 <input 
                   type='number'
                   id='bill'
                   name='bill'
                   placeholder='0'
                 />
-              </label>
-            </form>
+            </div>
             <div className='calculator_input-tip'>
               <button>5%</button>
               <button>10%</button>
               <button>15%</button>
               <button>25%</button>
               <button>50%</button>
-              <form htmlFor='custom'>
                 <input
                   type="number"
                   id='custom'
                   name='custom'
                   placeholder='Custom'
-                />
-              </form>              
+                />             
             </div>
-            <form className='calculator_input-people' htmlFor='people'>
-              <label>Number of people
+            <div className='calculator_input-people'>
+              <label htmlFor='people'>Number of people
+              </label>
                 <input 
                   type='number'
                   id='people'
                   name='people'
                   placeholder='0'
                 />
-              </label>
-            </form>
+            </div>
           </div>
           <div className='calculator_result'>
             <div className='calculator_result-amount'>

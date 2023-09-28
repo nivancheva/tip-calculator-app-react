@@ -28,5 +28,7 @@ body {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
     font-size: 1.5rem;
+
     background-color: var(--clr-light-gr-cyan);
+    color: var(--clr-dark-gr-cyan);
 }

@@ -1,5 +1,27 @@
+.wraper {
+    display: grid;
+    min-height: 100vh;
+}
 
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 9px;
+
+    font-size: 1.625rem;
+}
+
+h1 span {
+    display: block;
+}
 
 input {
     text-align: right;
+}
+
+@media (min-width:800px) {
+    .wraper {
+        place-content: center;
+    }
 }
