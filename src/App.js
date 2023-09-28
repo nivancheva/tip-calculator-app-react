@@ -49,6 +49,7 @@ function App() {
                     placeholder='0'
                     value={bill}
                     onChange={(e) => {setBill(parseFloat(e.target.value))}}
+                    min={0}
                   />
                 </div>
             </div>
@@ -71,6 +72,7 @@ function App() {
                     placeholder='Custom'
                     value={tipPercent}
                     onChange={(e) => {setTipPercent(parseFloat(e.target.value))}}
+                    min={0}
                   />             
               </div>
             </div>
@@ -86,6 +88,7 @@ function App() {
                     placeholder='0'
                     value={people}
                     onChange={(e) => {setPeople(parseFloat(e.target.value))}}
+                    min={0}
                   />
                 </div>
             </div>
