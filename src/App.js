@@ -8,42 +8,50 @@ function App() {
         <h1>Spli<span>tter</span></h1>
         <div className='calculator'>
           <div className='calculator_input'>
-            <form className='calculator_input-bill'>
-              <label>Bill</label>
-              <input 
-                type='number'
-                placeholder='0'
-              />
+            <form className='calculator_input-bill' htmlFor='bill'>
+              <label >Bill
+                <input 
+                  type='number'
+                  id='bill'
+                  name='bill'
+                  placeholder='0'
+                />
+              </label>
             </form>
             <div className='calculator_input-tip'>
-              <p>5%</p>
-              <p>10%</p>
-              <p>15%</p>
-              <p>25%</p>
-              <p>50%</p>
-              <form>
+              <button>5%</button>
+              <button>10%</button>
+              <button>15%</button>
+              <button>25%</button>
+              <button>50%</button>
+              <form htmlFor='custom'>
                 <input
                   type="number"
-                  name='custom'
                   id='custom'
+                  name='custom'
                   placeholder='Custom'
                 />
               </form>              
             </div>
-            <form className='calculator_input-people'>
-              <label>Number of people</label>
+            <form className='calculator_input-people' htmlFor='people'>
+              <label>Number of people
                 <input 
                   type='number'
+                  id='people'
+                  name='people'
                   placeholder='0'
                 />
+              </label>
             </form>
           </div>
           <div className='calculator_result'>
             <div className='calculator_result-amount'>
               <p>Tip Amount<span>/ person</span></p>
+              <p id="amount" class="amount-input">$0.00</p>
             </div>
             <div className='calculator_result-total'>
               <p>Total<span>/ person</span></p>
+              <p id="total" class="total-input">$0.00</p>
             </div>
             <button>Reset</button>
           </div>
