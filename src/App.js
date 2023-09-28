@@ -14,11 +14,23 @@ function App() {
   }
 
   function getResultTip() {
+    if (people === 0) {
+      return 0;
+    }
     return (bill*tipPercent/100) / people;
   }
 
   function getResultTotal() {
+    if (people === 0) {
+      return 0;
+    }
     return (bill + bill*tipPercent/100) / people;
+  }
+
+  function handleReset() {
+    setBill(0);
+    setTipPercent(0);
+    setPeople(0);
   }
 
   return (
@@ -47,8 +59,9 @@ function App() {
               <div className='calculator_input-tip'>
                 {
                   [5, 10, 15, 25, 50].map((tp, idx) => {
+                    const selectedClass = (tp === tipPercent) ? "selected" : '';
                     return (
-                      <button key={idx} onClick={() => {handleButtonClick(tp)}} className='button'>{tp}%</button>
+                      <button key={idx} onClick={() => {handleButtonClick(tp)}} className={`button ${selectedClass}`}>{tp}%</button>
                     );
                   })
                 }
@@ -57,6 +70,8 @@ function App() {
                     id='custom'
                     name='custom'
                     placeholder='Custom'
+                    value={tipPercent}
+                    onChange={(e) => {setTipPercent(parseFloat(e.target.value))}}
                   />             
               </div>
             </div>
@@ -85,7 +100,7 @@ function App() {
               <p className='sum-label'>Total<span className='light-text'>/ person</span></p>
               <p id="total" className="total-sum">${getResultTotal()}</p>
             </div>
-            <button className='button btn-reset'>Reset</button>
+            <button onClick={handleReset} className='button btn-reset'>Reset</button>
           </div>
         </div>
       </div>
