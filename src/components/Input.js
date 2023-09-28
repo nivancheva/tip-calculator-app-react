@@ -1,16 +1,22 @@
-export default function Input({label, id, value, setValue, iconUrl}) {
+export default function Input({label, id, setValue, icon}) {
+    function handleChange(e) {
+        if (!e.target.value) {
+            setValue(0);
+        } else {
+            setValue(parseFloat(e.target.value));
+        }
+    }    
     return (
         <div>
             <label htmlFor={id}>{label}</label>
             <div className='input-wrapper'>
-            <img className='icon' src={iconUrl}/>
+            <img className='icon' src={icon}/>
             <input 
                 type='number'
                 id={id}
                 name={id}
                 placeholder={0}
-                value={value}
-                onChange={(e) => {setValue(parseFloat(e.target.value))}}
+                onChange={handleChange}
                 min={0}
             />
             </div>

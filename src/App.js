@@ -3,6 +3,8 @@ import { useState } from 'react';
 import './App.css';
 import Input from './components/Input';
 import ResultDisplay from './components/ResultDisplay';
+import iconDollar from './icons/icon-dollar.svg';
+import iconPerson from './icons/icon-person.svg';
 
 const USDollar = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -28,6 +30,14 @@ function App() {
     return USDollar.format((bill + bill*tipPercent/100) / people);
   }
 
+  function handleCustomPercent(e) {
+    if (!e.target.value) {
+      setTipPercent(0);
+    } else {
+       setTipPercent(parseFloat(e.target.value))
+    }
+  }
+
   function handleReset() {
     setBill(0);
     setTipPercent(0);
@@ -43,9 +53,8 @@ function App() {
             <Input 
               label="Bill"
               id="bill"
-              value={bill}
               setValue={setBill}
-              iconUrl='./images/icon-dollar.svg' />
+              icon={iconDollar} />
             <div>
               <p>Select Tip %</p>
               <div className='calculator_input-tip'>
@@ -62,8 +71,7 @@ function App() {
                   id='custom'
                   name='custom'
                   placeholder='Custom'
-                  value={tipPercent}
-                  onChange={(e) => {setTipPercent(parseFloat(e.target.value))}}
+                  onChange={handleCustomPercent}
                   min={0}
                 />             
               </div>
@@ -71,9 +79,8 @@ function App() {
             <Input
               label="Number of People"
               id="people"
-              value={people}
               setValue={setPeople}
-              iconUrl='./images/icon-person.svg' />
+              icon={iconPerson} />
           </div>
           <div className='calculator_result'>
             <ResultDisplay label="Tip Amount" amount={getResultTip()} />
